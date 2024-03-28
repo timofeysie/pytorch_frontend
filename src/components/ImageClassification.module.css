@@ -1,0 +1,25 @@
+.input {
+    display: none;
+}
+
+.custom_file_upload {
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  cursor: pointer;
+  margin: 6px;
+}
+
+.image_container {
+  min-height: 224px;
+  max-width: 300px;
+  width: auto;
+  border: dashed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.preview {
+  height: 224px;
+}
