@@ -11,7 +11,7 @@ import Typography from "@mui/material/Typography";
 const ImageClassification = () => {
   const [selectedFile, setSelectedFile] = useState();
   const [preview, setPreview] = useState([]);
-  const [predictedLabel, setPredictedLabel] = useState("<select & classify>");
+  const [predictedLabel, setPredictedLabel] = useState("(select & upload to classify)");
   const fileInputRef = useRef(null);
 
   /**
@@ -36,6 +36,9 @@ const ImageClassification = () => {
     }
   };
 
+  /**
+   * Clear the predicted label and set the selected file object.
+   */
   const onSelectFile = (e) => {
     if (!e.target.files || e.target.files.length === 0) {
       setSelectedFile(undefined);
@@ -79,7 +82,7 @@ const ImageClassification = () => {
   return (
     <>
       <Stack>
-        <Typography noWrap>Image Classification</Typography>
+        <Typography noWrap m={5}>Image Classification</Typography>
 
         <Container>
           <div className={styles.image_container}>
@@ -134,7 +137,7 @@ const ImageClassification = () => {
             />
           </label>
           <Typography ml={1} sx={{ textOverflow: "ellipsis" }}>
-            {selectedFile?.name}
+            {selectedFile ? selectedFile?.name : "(select image)"}
           </Typography>
         </Item>
 
@@ -152,7 +155,7 @@ const ImageClassification = () => {
           <IconButton sx={{ marginTop: "5px" }} onClick={handleUploadImage}>
             <CloudUploadIcon sx={{ color: "black" }} />
           </IconButton>
-          <Typography>Upload & classify</Typography>
+          <Typography mt={0.5}>Upload & classify</Typography>
         </Item>
       </Stack>
     </>

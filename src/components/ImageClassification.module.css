@@ -21,5 +21,6 @@
 }
 
 .preview {
-  height: 224px;
+  height: auto;
+  max-width: 224px;
 }
