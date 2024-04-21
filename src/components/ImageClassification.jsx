@@ -136,7 +136,7 @@ const ImageClassification = () => {
               ref={fileInputRef}
             />
           </label>
-          <Typography ml={1} sx={{ textOverflow: "ellipsis" }}>
+          <Typography ml={1} sx={{ textOverflow: "ellipsis", overflow: "hidden" }}>
             {selectedFile ? selectedFile?.name : "(select image)"}
           </Typography>
         </Item>
